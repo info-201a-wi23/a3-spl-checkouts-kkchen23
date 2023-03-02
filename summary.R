@@ -13,6 +13,10 @@ checkouts_by_year <- audiobooks_df %>%
   group_by(CheckoutYear) %>%
   summarise(checkouts_total = sum(Checkouts))
 
+num_rows <- nrow(spl_ten_df)
+
+num_col <- ncol(spl_ten_df)
+
 #What is the average number of checkouts for audio books?
 avg_checkouts <- mean(audiobooks_df$Checkouts)
 

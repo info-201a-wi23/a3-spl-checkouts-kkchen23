@@ -49,7 +49,7 @@ ggplot() +
   geom_line(data = scifi_checkouts_per_month, aes(x = date, y = total_checkouts, color = "Science Fiction")) +
   scale_y_continuous(limits = c(0, 10000)) +
   labs(title = "Audio Books Checkouts Over Time by Genre",
-       x = "Month",
+       x = "Time",
        y ="Total Checkouts",
        colors = "Subject",
        legend.title = "Genre") +

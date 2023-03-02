@@ -37,7 +37,7 @@ pj_books$Title <- factor(pj_books$Title, levels = pj_books$Title[order(pj_books$
 
 
 ggplot(pj_books, aes(x = Title, y = total_checkouts)) +
-  geom_bar(stat = "identity", fill = "blue") +
+  geom_bar(stat = "identity", fill = "darkblue") +
   xlab("Book Title") +
   ylab("Total Checkouts") +
   ggtitle("Percy Jackson Audiobook Checkouts by Title") +

@@ -47,8 +47,7 @@ ggplot() +
   geom_point(data = riordan_audiobook_checkouts_per_month, aes(x = date, y = total_checkouts, color = "AUDIOBOOK")) +
   scale_y_continuous(limits = c(0, 1000)) +
   labs(title = "Rick Riordan Checkouts By Material",
-       x = "Month",
-       y ="Total Checkouts",
-       colors = "MaterialType",
-       legend.title = "Material") +
-  scale_color_manual(values = c("EBOOK" = "darkseagreen4", "AUDIOBOOK" = "darkblue"))
+       x = "Time",
+       y ="Total Checkouts") +
+  scale_color_discrete(name = "Material Type")
+  scale_color_manual(values = c("EBOOK" = "deeppink", "AUDIOBOOK" = "darkblue"))
