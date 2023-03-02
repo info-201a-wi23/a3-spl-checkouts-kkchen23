@@ -5,82 +5,76 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The Seattle Public Library has a data set that contains the monthy count of titles for physical and electronic checkouts. I have chosen a smaller data set from the overall, which views items checked out at least 10 times a month from 2017-2023. 
+
+I wanted to take a look at data regarding audio books because they have been a more popular form of reading and I have recently tried them too.
 
 ### Summary Information
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
+My questions that I explored in the summary information were:
+- What is the average number of checkouts for an audio book?
+- What is the greatest amount of checkouts for an audio book?
+- What is the year with the most/least checkouts for audio books?
+- How has the number of audio books checkouts changed over time?
 
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
+The average number of checkouts for audio books is 25. While the greatest amount of checkouts for an audio book is 4903. I think this balances out popular books that are constantly checked out by people with some very niche books or books used for research rather than entertainment. I would expect the number of greatest amount to be higher than 4903 but their may be limitations to the data or a lack of audio books available in the Seattle Public Library.
 
-Feel free to calculate and report values that you find relevant.
+My findings from calculating the year with the most audio book checkouts was 2022. I thought it would be 2020 because that is when the pandemic hit and I thought more people would turn to audio books, especially since public libraries and bookstores were closed. However, my findings for audio book checkouts over time will answer this shortly.
+
+On the flip side, I looked at the year with the least amount of audio books checkouts. It was 2023, which makes sense since there is only 2 months record so far in the year. So I edited my code to exclude 2023 and the year besides that is 2017. I then created a plot that showed audio book checkouts over time. It showed a drastic increase in checkouts from 2017-2023. This increase in popularity explains why 2022 had the most checkouts as well as 2017 having the lowest. 
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+The data set is collected and published by The Seattle Public Library. There are currently over 800,000 rows and 12 columns with titles such as: CheckoutYear, Subject (Genre), Creator(Author), etc.
+
+The checkout data ranges from April 2005-present, with updates being monthly around the 6th of the month. In addition, the data set only counts the original checkout, no renewals. The data is collected through multiple sources and media vendors. 
+
+The origins of the data set is very fascinating because it was developed due to an art installation. The art installation, like the data set, collected information on checkout data and would display it at the library. Along side the City of Seattle's Open Data Initiative, the checkout data set was formed in order to have data and enable transparency to the public. 
+
+By having this data, we are able to see trends in reading and media that offers insights to the culture around people. However, with this in mind, consuming media can be a very private matter to some and having data collected can invade people's privacy. When working with this data, its is also important not to form stigmas that may discriminate groups or individuals. 
+
+Furthermore, this data set is collected in Seattle, Washington which brings up several limitations and problems. The demographic of residents must be considered, especially those who can and do use the Seattle Library system. In addition, the culture and values of Seattle will be very different from other places in the world. For my assignment, it is very discriminate towards those who are hard of hearing or death because they are not checking out audio books.
 
 
-### First Trends Over Time Chart
+### Audio Books Checkouts Over Time by Genre
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
+My first chart is based on the trends of book genres. There are many to choose from but I selected three for easy comparison: fantasy, mythology, and science fiction. I chose fantasy and science fiction because they are both very popular genres and oppose each other. Fantasy is out of this world, while science fiction is grounded with reality. However both make for compelling and immerse stories. I selected mythology because that is a more niche genre, but one I grew up reading. 
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 ```
 
-### Second Trends Over Time Chart
+The line graph is utlized to display the increase or decrease of check outs over time. Having all three genres being graphed in the same plane allows for easier visualization of which genre is the most popular, as well as which genre has seen the most change in checkout amount. The colors I have chosen for each line allows for each line to stand out against each other while not being too sore on the eyes as their chroma is softer, rather than the neon computer colors. 
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Some trends I noticed were:
+- Mythology has the lowest amount of checkouts
+- Fantasy has the greatest amount of checkouts
+- All three genres have been seeing a steady increase in audio book genres, although there is a sharp drop in 2022
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
+### Rick Riordan Checkouts By Material
 
-Here's an example of how to run an R script inside an RMarkdown file:
+My second chart takes a look at one of my favorite authors, Rick Riordan. I wanted to analyze the number of checkouts Riordan had from 2017-2023, specifically in the form of ebook and audio books. With the invention of ebook and audio books, I believe that they are increasing in popularity and use. 
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
-### Your Choice
+A scatter plot was best fit as there was some time that had no checkouts, therefore breaking a continuous line in a line graph. In addition, there is a lot of overlap for total checkouts which would have been difficult to visualize if it were two singular lines on a graph. Once again, I utilized color to distinguish the two material types. 
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
+Some trends I noticed were
+- Audiobooks has a steady increase in checkouts from 2017-present
+- Ebooks spiked with their total checkouts between 2020-2021, my prediction is because of the pandemic ebooks were the most accessible form of reading
+-Ebooks saw a drastic decline after 2021, might be caused by the pandemic being over
+- The most amount of checkouts occurred between 2020-2022, similar prediction of this trend being due to the pandemic
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
 
-Here's an example of how to run an R script inside an RMarkdown file:
+### Percy Jackson Audiobook Checkouts by Title
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+My last chart is a bar graph depicting the amount of checkouts each book from the "Percy Jackson and the Olympians" series had. A bar graph was most suitable method as it best displays the differences between the number of checkouts between each book. I also ordered them from greatest amount of checkouts to least, and the order went chronologically by book title. This makes sense as readers often wouldn't be reading the middle of end of the series if they haven't started the beginning. The biggest surprise was how from book one to two, the amount of checkouts decreased by nearly half. 
+
+``````{r, echo = FALSE, code = readLines("chart3.R")}
 ```
 
 
